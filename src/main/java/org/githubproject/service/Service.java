@@ -9,9 +9,9 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class Service {
 
-    public Response getGithubResponse (String owner, String repositoryname) {
-        String url = "https://api.github.com/repos/{owner}/{repositoryname}";
-        RestTemplate restTemplate = new RestTemplate();
+    public Response getResponse (String owner, String repositoryname) {
+        final String url = "https://api.github.com/repos/{owner}/{repositoryname}";
+        final RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<Response> response = restTemplate
                 .getForEntity(
                         url,
